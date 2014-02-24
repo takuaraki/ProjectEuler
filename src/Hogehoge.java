@@ -2,9 +2,23 @@ import java.util.Arrays;
 
 public class Hogehoge {
     public static void main(String[] args) {
-        for(int i=0; i<10; i++){
-            System.out.println(Integer.toBinaryString(i));
+
+        System.out.println(isLeftTruncatable(232));
+        
+        
+    }
+    
+    public static boolean isLeftTruncatable(int n){
+        int digitNum = String.valueOf(n).length();
+        
+        while(digitNum != 0){
+            if(!isPrime(n)){
+                return false;
+            }
+            n = n%(int)Math.pow(10, digitNum-1);
+            digitNum--;
         }
+        return true;
     }
     
     public static boolean judge(int[] i, char[] c){

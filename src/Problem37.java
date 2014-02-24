@@ -4,7 +4,7 @@ public class Problem37 {
     public static void main(String[] args) {
         int sum = 0;
         
-        for(int i=10; i<1000000; i++){ // jは10^iのオーダー
+        for(int i=10; i<1000000; i++){
             if(isTruncatable(i)){
                 System.out.println(i);
                 sum += i;

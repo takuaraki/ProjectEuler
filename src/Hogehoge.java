@@ -2,10 +2,36 @@ import java.util.Arrays;
 
 public class Hogehoge {
     public static void main(String[] args) {
-
-        System.out.println(isLeftTruncatable(232));
-        
-        
+        for(int i=0; i<100; i++){
+            if(isTriNum(i)){
+                System.out.println(i);
+            }
+        }
+    }
+    
+    public static boolean isTriNum(int num){
+        int i = 1;
+        while(num >= i*(i+1)/2){
+            if(num == i*(i+1)/2){
+                return true;
+            }
+            i++;
+        }
+        return false;
+    }
+    
+    // array —v‘f‚ğæ‚èœ‚©‚ê‚é”z—ñ
+    // index æ‚èœ‚©‚ê‚é—v‘f‚Ì”Ô†
+    public static void remove(int[] array, int index){
+        int tmp[] = new int[array.length-1];
+        int tmp_index = 0;
+        for(int i=0; i<array.length; i++){
+            if(i!=index){
+                tmp[tmp_index] = array[i];
+                tmp_index++;
+            }
+        }
+        array = tmp;
     }
     
     public static boolean isLeftTruncatable(int n){
